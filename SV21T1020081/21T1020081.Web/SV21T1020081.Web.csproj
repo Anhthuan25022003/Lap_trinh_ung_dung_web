@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>_21T1020081.Web</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\themes\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SV21T1020081.BusinessLayers\SV21T1020081.BusinessLayers.csproj" />
+    <ProjectReference Include="..\SV21T1020081.DataLayers\SV21T1020081.DataLayers.csproj" />
+    <ProjectReference Include="..\SV21T1020081.DomainModels\SV21T1020081.DomainModels.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,174 @@
+﻿@model OrderDetailModel
+
+@{
+    ViewBag.Title = "Theo dõi đơn hàng";
+}
+
+<div class="box box-primary">
+    <div class="box-header text-right">
+        <div class="btn-group">
+            <div class="btn-group">
+                @if (Model.Order?.Status != SV21T1020081.DomainModels.Constants.ORDER_FINISHED
+                && Model.Order?.Status != SV21T1020081.DomainModels.Constants.ORDER_CANCEL
+                && Model.Order?.Status != SV21T1020081.DomainModels.Constants.ORDER_ACCEPTED
+                && Model.Order?.Status != SV21T1020081.DomainModels.Constants.ORDER_SHIPPING)
+                {
+
+
+                        <a href="~/Order/Cancel/@Model.Order.OrderID" class="btn btn-sm btn-danger" onclick="return confirm('Xác nhận hủy đơn hàng này?')">Hủy đơn hàng</a>
+
+                }
+
+            </div>
+            <a href="~/Order" class="btn btn-sm btn-info">Quay lại</a>
+        </div>
+    </div>
+    <div class="box-body form-horizontal">
+        <div class="form-group">
+            <label class="control-label col-sm-2">Mã đơn hàng:</label>
+            <div class="col-sm-4">
+                <p class="form-control">@Model.Order?.OrderID</p>
+            </div>
+            <label class="control-label col-sm-2">Ngày lập đơn hàng:</label>
+            <div class="col-sm-4">
+                <p class="form-control">@Model.Order?.OrderTime.ToString("dd/MM/yyyy HH:mm", new System.Globalization.CultureInfo("en-GB"))</p>
+            </div>
+
+            <label class="control-label col-sm-2">Ngày nhận đơn hàng:</label>
+            <div class="col-sm-4">
+                <p class="form-control">@Model.Order?.AcceptTime?.ToString("dd/MM/yyyy HH:mm", new System.Globalization.CultureInfo("en-GB"))</p>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2">Khách hàng:</label>
+            <div class="col-sm-10">
+                <p class="form-control">@Model.Order?.CustomerName</p>
+            </div>
+           
+            <label class="control-label col-sm-2">Địa chỉ:</label>
+            <div class="col-sm-10">
+                <p class="form-control">@Model.Order?.CustomerAddress</p>
+            </div>
+            <label class="control-label col-sm-2">Email:</label>
+            <div class="col-sm-10">
+                <p class="form-control">@Model.Order?.CustomerEmail</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2">Địa chỉ giao hàng:</label>
+            <div class="col-sm-10">
+                <p class="form-control">@Model.Order?.DeliveryAddress</p>
+            </div>
+            <label class="control-label col-sm-2">Tỉnh/thành:</label>
+            <div class="col-sm-10">
+                <p class="form-control">@Model.Order?.DeliveryProvince</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2">Người giao hàng:</label>
+            <div class="col-sm-4">
+                <p class="form-control">@Model.Order?.ShipperName</p>
+            </div>
+            <label class="control-label col-sm-2">Điện thoại:</label>
+            <div class="col-sm-4">
+                <p class="form-control">@Model.Order?.ShipperPhone</p>
+            </div>
+            <label class="control-label col-sm-2">Nhận giao hàng lúc:</label>
+            <div class="col-sm-4">
+                <p class="form-control">@Model.Order?.ShippedTime?.ToString("dd/MM/yyyy HH:mm", new System.Globalization.CultureInfo("en-GB"))</p>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2">Trạng thái đơn hàng:</label>
+            <div class="col-sm-4">
+                <p class="form-control">@Model.Order?.StatusDescription</p>
+            </div>
+            <label class="control-label col-sm-2">Thời điểm hoàn tất:</label>
+            <div class="col-sm-4">
+                <p class="form-control">@Model.Order?.FinishedTime?.ToString("dd/MM/yyyy HH:mm", new System.Globalization.CultureInfo("en-GB"))</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="box-body">
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped table-hover">
+                <caption><h4>Danh sách mặt hàng thuộc đơn hàng</h4></caption>
+                <thead>
+                    <tr class="bg-primary">
+                        <th class="text-center">STT</th>
+                        <th class="text-center">Tên hàng</th>
+                        <th class="text-center">ĐVT</th>
+                        <th class="text-center">Số lượng</th>
+                        <th class="text-center">Giá</th>
+                        <th class="text-center">Thành tiền</th>
+                        <th style="width:80px"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Details)
+                    {
+                        <tr>
+                            <td class="text-center">1</td>
+                            <td>@item.ProductName</td>
+                            <td class="text-center">@item.Unit</td>
+                            <td class="text-center">@item.Quantity</td>
+                            <td class="text-right ">@item.SalePrice.ToString("N0")</td>
+                            <td class="text-right">@item.TotalPrice.ToString("N0")</td>
+                            <td class="text-right">
+
+                               
+                            
+
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+                <tfoot>
+                    @{
+                        decimal total = 0;
+                    }
+                    @foreach (var item in Model.Details)
+                    {
+                        total += item.TotalPrice;
+                    }
+                    <tr>
+                        <th colspan="5" class="text-right">Tổng cộng:</th>
+                        <th class="text-right">@string.Format("{0:N0}", total)</th>
+                        <th></th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div id="dialogModal" class="modal fade" role="dialog">
+</div>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $(".btn-modal").click(function (e) {
+                e.preventDefault();
+                var link = $(this).prop("href");
+                $.ajax({
+                    url: link,
+                    type: "GET",
+                    success: function (data) {
+                        $("#dialogModal").empty();
+                        $("#dialogModal").html(data);
+                        $("#dialogModal").modal();
+                    }
+                });
+            });
+        })
+    </script>
+}

@@ -1,0 +1,49 @@
+﻿<aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+
+        <!-- /.search form -->
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu" data-widget="tree">
+
+
+
+
+            <li class="treeview active">
+                <a href="#">
+                    <i class="fa fa-database"></i> <span>Quản lý thông tin cá nhân</span>
+
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="~/Account/EditProfile"><i class="fa fa-user-circle"></i> Chỉnh sủa thông tin cá nhân</a></li>
+
+
+                </ul>
+
+            </li>
+
+            <li class="treeview active">
+                <a href="#">
+                    <i class="fa fa-database"></i> <span>Thông tin về đơn hàng</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="~/Product"><i class="fa fa-user-circle"></i> Sản phẩm</a></li>
+                    <li><a href="~/Order/Create"><i class="fa fa-shopping-cart"></i> Giỏ hàng</a></li>
+                    <li><a href="~/Order"><i class="fa fa-shopping-cart"></i> Đơn hàng</a></li>
+                </ul>
+
+            </li>
+
+        </ul>
+    </section>
+    <!-- /.sidebar -->
+</aside>
+@{
+    ViewBag.Title = "Quản lý khách hàng";
+}

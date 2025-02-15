@@ -1,0 +1,11 @@
+E:\Dai Hoc\2024.2025 (Nam 4)\Ki 1\Lap Trinh Ung Dung Web\SV21T1020081\SV21T1020081.DomainModels\bin\Debug\net8.0\SV21T1020081.DomainModels.deps.json
+E:\Dai Hoc\2024.2025 (Nam 4)\Ki 1\Lap Trinh Ung Dung Web\SV21T1020081\SV21T1020081.DomainModels\bin\Debug\net8.0\SV21T1020081.DomainModels.dll
+E:\Dai Hoc\2024.2025 (Nam 4)\Ki 1\Lap Trinh Ung Dung Web\SV21T1020081\SV21T1020081.DomainModels\bin\Debug\net8.0\SV21T1020081.DomainModels.pdb
+E:\Dai Hoc\2024.2025 (Nam 4)\Ki 1\Lap Trinh Ung Dung Web\SV21T1020081\SV21T1020081.DomainModels\obj\Debug\net8.0\SV21T1020081.DomainModels.GeneratedMSBuildEditorConfig.editorconfig
+E:\Dai Hoc\2024.2025 (Nam 4)\Ki 1\Lap Trinh Ung Dung Web\SV21T1020081\SV21T1020081.DomainModels\obj\Debug\net8.0\SV21T1020081.DomainModels.AssemblyInfoInputs.cache
+E:\Dai Hoc\2024.2025 (Nam 4)\Ki 1\Lap Trinh Ung Dung Web\SV21T1020081\SV21T1020081.DomainModels\obj\Debug\net8.0\SV21T1020081.DomainModels.AssemblyInfo.cs
+E:\Dai Hoc\2024.2025 (Nam 4)\Ki 1\Lap Trinh Ung Dung Web\SV21T1020081\SV21T1020081.DomainModels\obj\Debug\net8.0\SV21T1020081.DomainModels.csproj.CoreCompileInputs.cache
+E:\Dai Hoc\2024.2025 (Nam 4)\Ki 1\Lap Trinh Ung Dung Web\SV21T1020081\SV21T1020081.DomainModels\obj\Debug\net8.0\SV21T1020081.DomainModels.dll
+E:\Dai Hoc\2024.2025 (Nam 4)\Ki 1\Lap Trinh Ung Dung Web\SV21T1020081\SV21T1020081.DomainModels\obj\Debug\net8.0\refint\SV21T1020081.DomainModels.dll
+E:\Dai Hoc\2024.2025 (Nam 4)\Ki 1\Lap Trinh Ung Dung Web\SV21T1020081\SV21T1020081.DomainModels\obj\Debug\net8.0\SV21T1020081.DomainModels.pdb
+E:\Dai Hoc\2024.2025 (Nam 4)\Ki 1\Lap Trinh Ung Dung Web\SV21T1020081\SV21T1020081.DomainModels\obj\Debug\net8.0\ref\SV21T1020081.DomainModels.dll

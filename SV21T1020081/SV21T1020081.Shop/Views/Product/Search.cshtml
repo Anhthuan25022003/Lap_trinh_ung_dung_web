@@ -1,0 +1,126 @@
+﻿@model SV21T1020081.Shop.Models.ProductSearchResult
+@{
+    Layout = null;
+}
+<!-- Hiển thị dữ liệu -->
+<p style="margin-top:10px">
+    Có <strong>@Model.RowCount</strong> mặt hàng trong tổng số <strong>@Model.PageCount</strong> trang.
+</p>
+<div class="row">
+    @foreach (var item in Model.Data)
+    {
+        <div class="col-sm-4">
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h2 class="box-title" style="color: blue; font-weight: bold;">@item.ProductName</h2>
+                </div>
+
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-sm-4 text-center">
+                            <img class="profile-user-img img-responsive img-bordered" src="@WebConfig.IMAGE_SOURCE_HOST/images/products/@(string.IsNullOrWhiteSpace(item.Photo) ? "trang1.jfif" : item.Photo)" alt="Ảnh sản phẩm">
+                        </div>
+
+                        <div class="col-sm-8">
+                            <ul class="list-group list-group-unbordered">
+                                <li class="list-group-item">
+                                    <strong> @String.Format("{0:N0}", item.Price)đ</strong>
+                                </li>
+                                <li class="list-group-item"><a href="~/Product/DetailProduct/@item.ProductID"><i class="fa fa-info-circle"> Xem chi tiết</i></a></li>
+                            </ul>
+                            <a href="@Url.Action("AddToCart", "Order", new { productID = item.ProductID })"
+                               class="btn btn-primary add-to-cart"
+                               data-product-id="@item.ProductID"
+                               data-product-name="@item.ProductName"
+                               data-product-unit="@item.Unit"
+                               data-product-price="@item.Price">
+                                <i class="fa fa-shopping-cart"></i>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<div class="text-center">
+    <ul class="pagination">
+        @for (int p = 1; p <= Model.PageCount; p++)
+        {
+            if (p == Model.Page)
+            {
+                <li class="active"><a href="#">@p</a></li>
+            }
+            else
+            {
+                <li><a href="javascript:;" onclick="doSearch(@p)">@p</a></li>
+            }
+        }
+    </ul>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $(".add-to-cart").click(function (e) {
+            e.preventDefault();
+
+            // Lấy thông tin từ các thuộc tính dữ liệu
+            var productID = $(this).data("product-id");
+            var productName = $(this).data("product-name");
+            var productUnit = $(this).data("product-unit");
+            var productPrice = parseFloat($(this).data("product-price"));
+
+            // Lấy giá trị số lượng từ input (mặc định là 1 nếu không có input)
+            var quantity = 1; // Giả định mỗi lần thêm là 1 sản phẩm
+            var quantityInput = $(this).closest('.box-body').find('.quantity-input');
+            if (quantityInput.length > 0) {
+                quantity = parseInt(quantityInput.val()) || 1; // Đảm bảo số lượng là một số hợp lệ
+            }
+
+            // Tính toán thành tiền
+            var totalPrice = productPrice * quantity;
+
+            // Gửi yêu cầu AJAX
+            $.ajax({
+                url: "/Order/AddToCart",
+                type: "POST",
+                data: {
+                    ProductID: productID,
+                    ProductName: productName,
+                    Unit: productUnit,
+                    Quantity: quantity,
+                    SalePrice: productPrice,
+                    TotalPrice: totalPrice
+                },
+                success: function (response) {
+                    if (response === "") {
+                        alert("Thêm vào giỏ hàng thành công!");
+                        showShoppingCart(); // Cập nhật giỏ hàng sau khi thêm
+                    } else {
+                        alert(response); // Hiển thị lỗi từ server nếu có
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.error("Error adding to cart:", error);
+                    alert("Có lỗi khi thêm vào giỏ hàng.");
+                }
+            });
+        });
+    });
+
+    function showShoppingCart() {
+        $.ajax({
+            url: "/Order/ShoppingCart",
+            type: "GET",
+            success: function (data) {
+                $("#shoppingCart").html(data);
+            },
+            error: function (xhr, status, error) {
+                console.error("Error loading shopping cart:", error);
+                alert("Không thể tải giỏ hàng.");
+            }
+        });
+    }
+</script>

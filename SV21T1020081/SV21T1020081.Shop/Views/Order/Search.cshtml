@@ -1,0 +1,47 @@
+﻿@model SV21T1020081.Shop.Models.OrderSearchResult
+
+@{
+    Layout = null;
+}
+
+<div class="table-responsive">
+    <table class="table table-bordered table-hover table-striped">
+        <thead>
+            <tr class="bg-primary">
+                <th>Mã đơn hàng</th>
+                <th>Ngày lập</th>
+                <th>Thời điểm duyệt</th>
+                <th>Người giao hàng</th>
+                <th>Ngày nhận giao hàng</th>
+
+                <th>Trạng thái</th>
+                <th style="width:40px"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var i in Model.Data)
+            {
+                 {
+                    var userData = User.GetUserData();
+                    if (userData.DisplayName ==i.CustomerName)
+                    {
+                <tr>
+                    <td>@i.OrderID</td>
+                    <td>@i.OrderTime</td>
+                    <td>@i.AcceptTime</td>
+                    <td>@i.ShipperName</td>
+                    <td>@i.ShippedTime</td>
+
+                    <td>@i.StatusDescription</td>
+                    <td>
+                        <a href="~/Order/Details/@i.OrderID" class="btn btn-info btn-xs">
+                                        <i class="fa fa-info-circle"></i>
+                        </a>
+                    </td>
+                </tr>
+
+            }}}
+        </tbody>
+    </table>
+</div>
+

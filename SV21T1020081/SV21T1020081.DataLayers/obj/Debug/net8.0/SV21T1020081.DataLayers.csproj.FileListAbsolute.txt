@@ -1,0 +1,15 @@
+E:\Dai Hoc\2024.2025 (Nam 4)\Ki 1\Lap Trinh Ung Dung Web\SV21T1020081\SV21T1020081.DataLayers\bin\Debug\net8.0\SV21T1020081.DataLayers.deps.json
+E:\Dai Hoc\2024.2025 (Nam 4)\Ki 1\Lap Trinh Ung Dung Web\SV21T1020081\SV21T1020081.DataLayers\bin\Debug\net8.0\SV21T1020081.DataLayers.dll
+E:\Dai Hoc\2024.2025 (Nam 4)\Ki 1\Lap Trinh Ung Dung Web\SV21T1020081\SV21T1020081.DataLayers\bin\Debug\net8.0\SV21T1020081.DataLayers.pdb
+E:\Dai Hoc\2024.2025 (Nam 4)\Ki 1\Lap Trinh Ung Dung Web\SV21T1020081\SV21T1020081.DataLayers\bin\Debug\net8.0\SV21T1020081.DomainModels.dll
+E:\Dai Hoc\2024.2025 (Nam 4)\Ki 1\Lap Trinh Ung Dung Web\SV21T1020081\SV21T1020081.DataLayers\bin\Debug\net8.0\SV21T1020081.DomainModels.pdb
+E:\Dai Hoc\2024.2025 (Nam 4)\Ki 1\Lap Trinh Ung Dung Web\SV21T1020081\SV21T1020081.DataLayers\obj\Debug\net8.0\SV21T1020081.DataLayers.csproj.AssemblyReference.cache
+E:\Dai Hoc\2024.2025 (Nam 4)\Ki 1\Lap Trinh Ung Dung Web\SV21T1020081\SV21T1020081.DataLayers\obj\Debug\net8.0\SV21T1020081.DataLayers.GeneratedMSBuildEditorConfig.editorconfig
+E:\Dai Hoc\2024.2025 (Nam 4)\Ki 1\Lap Trinh Ung Dung Web\SV21T1020081\SV21T1020081.DataLayers\obj\Debug\net8.0\SV21T1020081.DataLayers.AssemblyInfoInputs.cache
+E:\Dai Hoc\2024.2025 (Nam 4)\Ki 1\Lap Trinh Ung Dung Web\SV21T1020081\SV21T1020081.DataLayers\obj\Debug\net8.0\SV21T1020081.DataLayers.AssemblyInfo.cs
+E:\Dai Hoc\2024.2025 (Nam 4)\Ki 1\Lap Trinh Ung Dung Web\SV21T1020081\SV21T1020081.DataLayers\obj\Debug\net8.0\SV21T1020081.DataLayers.csproj.CoreCompileInputs.cache
+E:\Dai Hoc\2024.2025 (Nam 4)\Ki 1\Lap Trinh Ung Dung Web\SV21T1020081\SV21T1020081.DataLayers\obj\Debug\net8.0\SV21T102.7832530B.Up2Date
+E:\Dai Hoc\2024.2025 (Nam 4)\Ki 1\Lap Trinh Ung Dung Web\SV21T1020081\SV21T1020081.DataLayers\obj\Debug\net8.0\SV21T1020081.DataLayers.dll
+E:\Dai Hoc\2024.2025 (Nam 4)\Ki 1\Lap Trinh Ung Dung Web\SV21T1020081\SV21T1020081.DataLayers\obj\Debug\net8.0\refint\SV21T1020081.DataLayers.dll
+E:\Dai Hoc\2024.2025 (Nam 4)\Ki 1\Lap Trinh Ung Dung Web\SV21T1020081\SV21T1020081.DataLayers\obj\Debug\net8.0\SV21T1020081.DataLayers.pdb
+E:\Dai Hoc\2024.2025 (Nam 4)\Ki 1\Lap Trinh Ung Dung Web\SV21T1020081\SV21T1020081.DataLayers\obj\Debug\net8.0\ref\SV21T1020081.DataLayers.dll
